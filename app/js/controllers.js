@@ -2,10 +2,21 @@
 
 /* Controllers */
 
-angular.module('myApp.controllers', []).
-  controller('MyCtrl1', [function() {
+var vantageApp = angular.module('vantageApp', []);
 
-  }])
-  .controller('MyCtrl2', [function() {
-
-  }]);
+vantageApp.controller('SomeCtrl', function($scope) {
+  $scope.names = [
+    {'firstName': 'Nick',
+    'lastName': 'Gray'},
+    {'firstName': 'Damian',
+    'lastName': 'Matheson'},
+    {'firstName': 'Matt',
+    'lastName': 'Gray'},
+    {'firstName': 'Nick',
+    'lastName': 'Gray'},
+    {'firstName': 'Damian',
+    'lastName': 'Matheson'},
+    {'firstName': 'Matt',
+    'lastName': 'Gray'}
+  ];
+});
