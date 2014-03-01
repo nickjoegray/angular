@@ -26,7 +26,7 @@ describe('vantageApp controllers', function() {
     });
  
     it('should set the default value of orderProp model', function() {
-      expect(scope.orderProp).toBe('result[0].name');
+      expect(scope.orderProp).toBe('name');
     });
   });
 });

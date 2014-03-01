@@ -11,15 +11,15 @@
     <input ng-model="search">
     Sort: 
     <select ng-model="orderProp">
-      <option value="result[0].id">ID</option>
-      <option value="result[0].name">Name</option>
+      <option value="id">ID</option>
+      <option value="name">Name</option>
     </select>
   </div>
 
   <div>
     <ul class="products">
       <li ng-repeat="product in products | filter:search | orderBy:orderProp">
-        <p>{{product.result[0].name}}</p>
+        <p>{{product.name}}</p>
       </li>
     </ul>
   </div>
