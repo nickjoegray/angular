@@ -17,11 +17,14 @@
   </div>
 
   <div>
-    <ul class="products">
+    <ol class="products">
       <li ng-repeat="product in products | filter:search | orderBy:orderProp">
         <p>{{product.name}}</p>
+        <a href="#/products/{{product.id}}"><img ng-src="{{product.image_thumb_url}}"></a>
+        <a href="#/products/{{product.id}}">{{product.name}}</a>
+        {{product.id}}
       </li>
-    </ul>
+    </ol>
   </div>
 
 
