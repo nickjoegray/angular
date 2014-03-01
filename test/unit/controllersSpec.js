@@ -2,18 +2,20 @@
 
 /* jasmine specs for controllers go here */
 
-describe('controllers', function(){
-
-  describe('SomeCtrl', function(){
-
+describe('vantageApp controllers', function() {
+  
+  describe('ProductsCtrl', function(){
+    var scope, ctrl;
+  
     beforeEach(module('vantageApp'));
-
-    it('should create "names" model with 2 names', inject(function($controller) {
-      var scope = {},
-          ctrl = $controller('SomeCtrl', {$scope:scope});
-
-      expect(scope.names.length).toBe(6);
+  
+    beforeEach(inject(function($controller) {
+      scope = {};
+      ctrl = $controller('ProductsCtrl', {$scope:scope});
     }));
-
+ 
+    it('should set the default value of orderProp model', function() {
+      expect(scope.orderProp).toBe('result[0].name');
+    });
   });
 });

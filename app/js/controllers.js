@@ -4,19 +4,10 @@
 
 var vantageApp = angular.module('vantageApp', []);
 
-vantageApp.controller('SomeCtrl', function($scope) {
-  $scope.names = [
-    {'firstName': 'Nick',
-    'lastName': 'Gray'},
-    {'firstName': 'Damian',
-    'lastName': 'Matheson'},
-    {'firstName': 'Matt',
-    'lastName': 'Gray'},
-    {'firstName': 'Nick',
-    'lastName': 'Gray'},
-    {'firstName': 'Damian',
-    'lastName': 'Matheson'},
-    {'firstName': 'Matt',
-    'lastName': 'Gray'}
-  ];
+vantageApp.controller('ProductsCtrl', function($scope, $http) {
+  $http.get('json/products.json').success(function(data) {
+    $scope.products = data;
+  });
+
+  $scope.orderProp = 'result[0].name';
 });

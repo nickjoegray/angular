@@ -5,16 +5,21 @@
   <title>VantageApp</title>
   <link rel="stylesheet" href="css/app.css"/>
 </head>
-<body ng-controller="SomeCtrl">
+<body ng-controller="ProductsCtrl">
 
-  <div class="main">
+  <div>
     <input ng-model="search">
+    Sort: 
+    <select ng-model="orderProp">
+      <option value="result[0].id">ID</option>
+      <option value="result[0].name">Name</option>
+    </select>
   </div>
 
   <div>
-    <ul>
-      <li ng-repeat="name in names | filter:search">
-        <p>{{name.firstName}} {{name.lastName}}</p>
+    <ul class="products">
+      <li ng-repeat="product in products | filter:search | orderBy:orderProp">
+        <p>{{product.result[0].name}}</p>
       </li>
     </ul>
   </div>
